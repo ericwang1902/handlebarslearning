@@ -56,6 +56,7 @@ router.post('/register', function(req, res, next) {
   }
 });
 
+
 passport.use(new LocalStrategy(
   function(username, password, done) {
      User.getUserByUsername(username,function(err,user){
@@ -83,6 +84,7 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
 
 //登录
 router.post('/login',
